@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">calculator</string>
+    <string name="subscribe"><a href="https://www.youtube.com/channel/UCiWG51lxlLrN7rK_oeVRarQ">Subscribe</a></string>
+    <string name="welcome_to_my_channel">Welcome to my channel</string>
+    <string name="todo">TODO</string>
+    <string name="share"><a href="https://www.youtube.com/channel/UCiWG51lxlLrN7rK_oeVRarQ">Share</a></string>
+</resources>
