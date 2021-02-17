@@ -7,7 +7,7 @@
     <corners android:radius="150dp"/>
 
     <ripple xmlns:android="http://schemas.android.com/apk/res/android"
-        android:color="#FFAB00">
+        android:color="#AA00FF">
     </ripple>
 
     <stroke android:width="2dp" android:color="@color/black"> </stroke>
