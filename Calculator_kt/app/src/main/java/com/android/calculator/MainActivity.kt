@@ -122,11 +122,15 @@ class MainActivity : AppCompatActivity() {
                 op=1
             }
             else if (op==1){
-                t+=1
+                t+=i
                 i=0f
                 op=1
             }
-
+            else if (op==2) {
+                t -= i
+                i = 0f
+                op = 1
+            }
 
         }
 
