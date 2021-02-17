@@ -282,8 +282,7 @@ class MainActivity : AppCompatActivity() {
                     op = 0
                 }
                 5 -> {
-                    t /= i
-                    s=t
+                    s=t%i
                     op=0
                     i=0f
                     t=0f
@@ -295,10 +294,12 @@ class MainActivity : AppCompatActivity() {
         neg.setOnClickListener {
             i *= -1
             j=i.toString()
+            number.append("(-1)")
         }
         del.setOnClickListener {
             if(j != "") {
                 j=j.dropLast(1)
+                number.text=j
             }
         }
         per.setOnClickListener {
