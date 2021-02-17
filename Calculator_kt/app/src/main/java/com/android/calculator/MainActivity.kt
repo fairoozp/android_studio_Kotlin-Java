@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
     private var t: Float = 0f
     private var op: Int = 0
     private var s: Float = 0f
+    var j : String =""
 
     private lateinit var result: TextView
     private lateinit var number: TextView
@@ -59,6 +60,7 @@ class MainActivity : AppCompatActivity() {
         b1.setOnClickListener {
             i = i * 10 + 1
             number.append("1")
+            j
         }
         b2.setOnClickListener {
             i = i * 10 + 2
