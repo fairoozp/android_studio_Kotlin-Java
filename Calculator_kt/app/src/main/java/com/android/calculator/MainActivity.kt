@@ -32,11 +32,17 @@ class MainActivity : AppCompatActivity() {
     private lateinit var bm: Button
     private lateinit var bml: Button
     private lateinit var bdv: Button
+    private lateinit var neg: Button
+    private lateinit var del: Button
+    private lateinit var per: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        per = findViewById(R.id.per)
+        del = findViewById(R.id.del)
+        neg = findViewById(R.id.neg)
         b1 = findViewById(R.id.b1)
         b2 = findViewById(R.id.b2)
         b3 = findViewById(R.id.b3)
@@ -275,9 +281,31 @@ class MainActivity : AppCompatActivity() {
                     s = t / i
                     op = 0
                 }
+                5 -> {
+                    t /= i
+                    s=t
+                    op=0
+                    i=0f
+                    t=0f
+                }
             }
             i=s
             result.text = s.toString()
+        }
+        neg.setOnClickListener {
+            i *= -1
+            j=i.toString()
+        }
+        del.setOnClickListener {
+            if(j != "") {
+                j=j.dropLast(1)
+            }
+        }
+        per.setOnClickListener {
+            number.append("%")
+            op=5
+            t=i
+            i= 0F
         }
         bc.setOnClickListener {
             result.text = ""
