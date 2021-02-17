@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
     private var t: Float = 0f
     private var op: Int = 0
     private var s: Float = 0f
+    private var j:String=""
 
     private lateinit var result: TextView
     private lateinit var number: TextView
@@ -57,47 +58,58 @@ class MainActivity : AppCompatActivity() {
         result = findViewById(R.id.result)
 
         b1.setOnClickListener {
-            i = i * 10 + 1
+            j += 1
+            i=j.toFloat()
             number.append("1")
         }
         b2.setOnClickListener {
-            i = i * 10 + 2
+            j += 2
+            i=j.toFloat()
             number.append("2")
         }
         b3.setOnClickListener {
-            i = i * 10 + 3
+            j += 3
+            i=j.toFloat()
             number.append("3")
         }
         b4.setOnClickListener {
-            i = i * 10 + 4
+            j += 4
+            i=j.toFloat()
             number.append("4")
         }
         b5.setOnClickListener {
-            i = i * 10 + 5
+            j += 5
+            i=j.toFloat()
             number.append("5")
         }
         b6.setOnClickListener {
-            i = i * 10 + 6
+            j += 6
+            i=j.toFloat()
             number.append("6")
         }
         b7.setOnClickListener {
-            i = i * 10 + 7
+            j += 7
+            i=j.toFloat()
             number.append("7")
         }
         b8.setOnClickListener {
-            i = i * 10 + 8
+            j += 8
+            i=j.toFloat()
             number.append("8")
         }
         b9.setOnClickListener {
-            i = i * 10 + 9
+            j += 9
+            i=j.toFloat()
             number.append("9")
         }
         b0.setOnClickListener {
-            i = i * 10 + 0
+            j += 0
+            i=j.toFloat()
             number.append("0")
         }
         bd.setOnClickListener {
-            i = (i * 10 + .0).toFloat()
+            j += "."
+            i=j.toFloat()
             number.append(".")
         }
         bm.setOnClickListener {
@@ -117,6 +129,7 @@ class MainActivity : AppCompatActivity() {
         }
         bp.setOnClickListener {
             number.append("+")
+            j = ""
             when (op) {
                 0 -> {
                     t = i
@@ -146,6 +159,7 @@ class MainActivity : AppCompatActivity() {
             }
             bm.setOnClickListener {
                 number.append("-")
+                j = ""
                 when (op) {
                     0 -> {
                         t = i
@@ -176,6 +190,7 @@ class MainActivity : AppCompatActivity() {
             }
             bml.setOnClickListener {
                 number.append("*")
+                j = ""
                 when (op) {
                     0 -> {
                         t = i
@@ -206,6 +221,7 @@ class MainActivity : AppCompatActivity() {
             }
             bdv.setOnClickListener {
                 number.append("/")
+                j = ""
                 when (op) {
                     0 -> {
                         t = i
@@ -269,6 +285,7 @@ class MainActivity : AppCompatActivity() {
             i = 0f
             t = 0f
             op = 0
+            j = ""
 
         }
     }
