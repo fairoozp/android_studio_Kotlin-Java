@@ -260,7 +260,7 @@ class MainActivity : AppCompatActivity() {
                     op = 0
                 }
             }
-            t=s
+            i=s
             result.text = s.toString()
         }
         bc.setOnClickListener {
