@@ -118,6 +118,7 @@ class MainActivity : AppCompatActivity() {
             i=j.toFloat()
             number.append(".")
         }
+
         bp.setOnClickListener {
             number.append("+")
             j = ""
@@ -148,6 +149,7 @@ class MainActivity : AppCompatActivity() {
                     op = 1
                 }
             }
+
             bm.setOnClickListener {
                 number.append("-")
                 j = ""
@@ -179,6 +181,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
+
             bml.setOnClickListener {
                 number.append("*")
                 j = ""
@@ -210,6 +213,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
+
             bdv.setOnClickListener {
                 number.append("/")
                 j = ""
@@ -273,7 +277,6 @@ class MainActivity : AppCompatActivity() {
                     t=0f
                 }
             }
-            i=s
             result.text = s.toString()
         }
         neg.setOnClickListener {
@@ -285,9 +288,7 @@ class MainActivity : AppCompatActivity() {
             if(j != "") {
                 j=j.dropLast(1)
                 i=j.toFloat()
-                number.text= t.toString()
-                number.append(op.toString())
-                number.append(i.toString())
+                number.text=j
             }
         }
         per.setOnClickListener {

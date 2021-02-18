@@ -17,4 +17,7 @@
     <string name="_4">4</string>
     <string name="_6">6</string>
     <string name="_5">5</string>
+    <string name="x">Del</string>
+    <string name="_per">%</string>
+    <string name="_neg">+/-</string>
 </resources>

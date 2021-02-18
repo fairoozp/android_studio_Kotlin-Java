@@ -316,7 +316,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_action"
-        android:text="X"
+        android:text="@string/x"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="25sp"
         app:backgroundTint="#FFAB00"
@@ -332,7 +333,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_action"
-        android:text="%"
+        android:text="@string/_per"
         android:textColor="@color/white"
         android:textSize="25sp"
         app:backgroundTint="#FFAB00"
@@ -348,7 +349,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_action"
-        android:text="+/-"
+        android:text="@string/_neg"
         android:textColor="@color/white"
         android:textSize="25sp"
         app:backgroundTint="#FFAB00"
@@ -357,6 +358,6 @@
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.443" />/>
+        app:layout_constraintVertical_bias="0.443" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
