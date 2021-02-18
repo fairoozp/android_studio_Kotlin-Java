@@ -286,9 +286,16 @@ class MainActivity : AppCompatActivity() {
             number.append("(-1)")
         }
         del.setOnClickListener {
+            if(j != "") {
                 j=j.dropLast(1)
                 i=j.toFloat()
                 number.text=j
+            }
+            else{
+                j=""
+                i=j.toFloat()
+                number.text=""
+            }
         }
         per.setOnClickListener {
             number.append("%")
