@@ -149,6 +149,7 @@ class MainActivity : AppCompatActivity() {
                     op = 1
                 }
             }
+        }
 
             bm.setOnClickListener {
                 number.append("-")
@@ -245,7 +246,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
-        }
+
 
 
         bs.setOnClickListener {
