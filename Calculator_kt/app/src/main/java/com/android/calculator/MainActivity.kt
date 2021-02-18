@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
     private var t: Float = 0f
     private var op: Int = 0
     private var s: Float = 0f
-    private var j:String=""
+    private var j:String = ""
 
     private lateinit var result: TextView
     private lateinit var number: TextView
@@ -286,11 +286,9 @@ class MainActivity : AppCompatActivity() {
             number.append("(-1)")
         }
         del.setOnClickListener {
-            if(j != "") {
                 j=j.dropLast(1)
                 i=j.toFloat()
                 number.text=j
-            }
         }
         per.setOnClickListener {
             number.append("%")
