@@ -285,6 +285,7 @@ class MainActivity : AppCompatActivity() {
                     t=0f
                 }
             }
+            i= s
             result.text = s.toString()
         }
         neg.setOnClickListener {
