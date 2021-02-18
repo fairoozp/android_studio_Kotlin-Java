@@ -118,21 +118,6 @@ class MainActivity : AppCompatActivity() {
             i=j.toFloat()
             number.append(".")
         }
-        bm.setOnClickListener {
-            t -= i
-            i = 0F
-            number.append("-")
-        }
-        bml.setOnClickListener {
-            t *= i
-            i = 0F
-            number.append("*")
-        }
-        bdv.setOnClickListener {
-            t += i
-            i = 0F
-            number.append("/")
-        }
         bp.setOnClickListener {
             number.append("+")
             j = ""
@@ -299,7 +284,10 @@ class MainActivity : AppCompatActivity() {
         del.setOnClickListener {
             if(j != "") {
                 j=j.dropLast(1)
-                number.text=j
+                i=j.toFloat()
+                number.text= t.toString()
+                number.append(op.toString())
+                number.append(i.toString())
             }
         }
         per.setOnClickListener {
