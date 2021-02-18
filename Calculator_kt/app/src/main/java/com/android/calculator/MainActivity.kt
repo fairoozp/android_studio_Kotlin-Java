@@ -1,11 +1,18 @@
 package com.android.calculator
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.multidex.MultiDex
 
 class MainActivity : AppCompatActivity() {
+
+    override fun attachBaseContext(base: Context) {
+        super.attachBaseContext(base)
+        MultiDex.install(this)
+    }
 
     private var i: Float = 0f
     private var t: Float = 0f
