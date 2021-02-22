@@ -72,33 +72,3 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
-
-fun MainActivity.main(args: Array<String>){
-
-    amount_home = findViewById(R.id.amount_home)
-    amount_reminder = findViewById(R.id.amount_reminder)
-    balance = findViewById(R.id.balance)
-    income = findViewById(R.id.income)
-    expence = findViewById(R.id.expence)
-    usage = findViewById(R.id.usage)
-    add_home = findViewById(R.id.add_home)
-    add_reminder = findViewById(R.id.add_reminder)
-    sub_home = findViewById(R.id.sub_home)
-    sub_reminder = findViewById(R.id.sub_reminder)
-    submit = findViewById(R.id.submit)
-    delete = findViewById(R.id.delete)
-
-
-
-    add_home.setOnClickListener{
-        var i : String = amount_home.toString()
-
-        balance.text = i.toString()
-        amount_home.text
-    }
-    submit.setOnClickListener {
-        amount_reminder.setText("0")
-    }
-
-
-}
