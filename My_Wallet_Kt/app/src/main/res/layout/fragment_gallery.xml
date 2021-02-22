@@ -57,7 +57,7 @@
         app:layout_constraintVertical_bias="0.088" />
 
     <EditText
-        android:id="@+id/editTextNumber2"
+        android:id="@+id/amount_reminder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -74,7 +74,7 @@
         app:layout_constraintVertical_bias="0.114" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/add_reminder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/white"
@@ -84,10 +84,10 @@
         app:layout_constraintHorizontal_bias="0.956"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.549" />
+        app:layout_constraintVertical_bias="0.548" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/sub_reminder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/white"
@@ -100,7 +100,7 @@
         app:layout_constraintVertical_bias="0.548" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button"
@@ -118,7 +118,7 @@
         app:layout_constraintVertical_bias="0.678" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button"

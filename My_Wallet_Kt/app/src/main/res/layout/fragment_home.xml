@@ -23,10 +23,10 @@
         app:layout_constraintVertical_bias="0.179" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/balance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="12500"
+        android:text="0"
         android:textColor="#4CAF50"
         android:textSize="40sp"
         android:textStyle="normal"
@@ -56,7 +56,7 @@
         app:layout_constraintVertical_bias="0.428" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/amount_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -73,7 +73,7 @@
         app:layout_constraintVertical_bias="0.01999998" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/add_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/white"
@@ -86,7 +86,7 @@
         app:layout_constraintVertical_bias="0.513" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/sub_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/white"
@@ -115,11 +115,11 @@
         app:layout_constraintVertical_bias="0.699" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/usage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="44"
+        android:text="0"
         android:textColor="#3F51B5"
         android:textSize="20sp"
         android:textStyle="normal"
@@ -130,11 +130,11 @@
         app:layout_constraintVertical_bias="0.75" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/expence"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="10000"
+        android:text="0"
         android:textColor="#F44336"
         android:textSize="20sp"
         android:textStyle="normal"
@@ -145,11 +145,11 @@
         app:layout_constraintVertical_bias="0.75" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/income"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="22500"
+        android:text="0"
         android:textColor="#4CAF50"
         android:textSize="20sp"
         android:textStyle="normal"
