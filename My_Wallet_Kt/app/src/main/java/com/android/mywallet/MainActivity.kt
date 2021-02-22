@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var sub_reminder : ImageButton
     lateinit var submit : Button
     lateinit var delete : Button
+    private  var s : Int = 1000
 
 
 
