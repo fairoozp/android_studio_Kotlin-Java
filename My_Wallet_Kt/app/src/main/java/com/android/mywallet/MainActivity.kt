@@ -23,18 +23,18 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
 
 
-    private lateinit var amount_home : EditText
-    private lateinit var amount_reminder : EditText
-    private lateinit var balance : TextView
-    private lateinit var income : TextView
-    private lateinit var expence : TextView
-    private lateinit var usage : TextView
-    private lateinit var add_home : ImageButton
-    private lateinit var sub_home : ImageButton
-    private lateinit var add_reminder : ImageButton
-    private lateinit var sub_reminder : ImageButton
-    private lateinit var submit : Button
-    private lateinit var delete : Button
+    lateinit var amount_home : EditText
+    lateinit var amount_reminder : EditText
+    lateinit var balance : TextView
+    lateinit var income : TextView
+    lateinit var expence : TextView
+    lateinit var usage : TextView
+    lateinit var add_home : ImageButton
+    lateinit var sub_home : ImageButton
+    lateinit var add_reminder : ImageButton
+    lateinit var sub_reminder : ImageButton
+    lateinit var submit : Button
+    lateinit var delete : Button
 
 
 
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
         val fab: FloatingActionButton = findViewById(R.id.fab)
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "Not Available Now Try Again Later", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
@@ -71,32 +71,34 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-    fun main(args: Array<String>){
+}
 
-        amount_home = findViewById(R.id.amount_home)
-        amount_reminder = findViewById(R.id.amount_reminder)
-        balance = findViewById(R.id.balance)
-        income = findViewById(R.id.income)
-        expence = findViewById(R.id.expence)
-        usage = findViewById(R.id.usage)
-        add_home = findViewById(R.id.add_home)
-        add_reminder = findViewById(R.id.add_reminder)
-        sub_home = findViewById(R.id.sub_home)
-        sub_reminder = findViewById(R.id.sub_reminder)
-        submit = findViewById(R.id.submit)
-        delete = findViewById(R.id.delete)
+fun MainActivity.main(args: Array<String>){
 
-
-
-        add_home.setOnClickListener{
-            balance = amount_home
-            balance.text = balance.toString()
-            amount_home.text
-        }
-        submit.setOnClickListener {
-            amount_reminder.setText("0")
-        }
+    amount_home = findViewById(R.id.amount_home)
+    amount_reminder = findViewById(R.id.amount_reminder)
+    balance = findViewById(R.id.balance)
+    income = findViewById(R.id.income)
+    expence = findViewById(R.id.expence)
+    usage = findViewById(R.id.usage)
+    add_home = findViewById(R.id.add_home)
+    add_reminder = findViewById(R.id.add_reminder)
+    sub_home = findViewById(R.id.sub_home)
+    sub_reminder = findViewById(R.id.sub_reminder)
+    submit = findViewById(R.id.submit)
+    delete = findViewById(R.id.delete)
 
 
+
+    add_home.setOnClickListener{
+        var i : String = amount_home.toString()
+
+        balance.text = i.toString()
+        amount_home.text
     }
+    submit.setOnClickListener {
+        amount_reminder.setText("0")
+    }
+
+
 }
