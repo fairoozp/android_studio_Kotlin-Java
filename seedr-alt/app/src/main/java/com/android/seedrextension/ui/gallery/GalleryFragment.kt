@@ -1,10 +1,11 @@
-package com.android.seedrextension.ui.gallery
+ package com.android.seedrextension.ui.gallery
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -31,7 +32,22 @@ class GalleryFragment : Fragment() {
 
 
         val web_home : WebView = root.findViewById(R.id.web_home)
+
+        web_home.setWebViewClient(object: WebViewClient() {
+            override fun shouldOverrideUrlLoading(view:WebView, url:String):Boolean {
+                return false
+            }
+        })
+
         web_home.loadUrl("https://www.seedr.cc/files")
+
+        web_home.setScrollbarFadingEnabled(false);
+        val newUA = "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.4) Gecko/20100101 Firefox/4.0"
+        web_home.getSettings().setUserAgentString(newUA)
+
+        web_home.evaluateJavascript("document.querySelector('meta[name=\"viewport\"]').setAttribute('content', 'width=1024px, initial-scale=' + (document.documentElement.clientWidth / 1024));", null);
+
+
         web_home.getSettings().setJavaScriptEnabled(true);
         web_home.getSettings().setLoadWithOverviewMode(true);
         web_home.getSettings().setUseWideViewPort(true);
@@ -40,14 +56,9 @@ class GalleryFragment : Fragment() {
         web_home.getSettings().setBuiltInZoomControls(true);
         web_home.getSettings().setDisplayZoomControls(false);
 
-        web_home.setScrollbarFadingEnabled(false);
-        val newUA = "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.4) Gecko/20100101 Firefox/4.0"
-        web_home.getSettings().setUserAgentString(newUA)
-
-        if (web_home.canGoBack()) web_home.goBack()
-
         return root
     }
+
 
 
 
