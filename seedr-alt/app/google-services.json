@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "612312458057",
+    "project_id": "seedr-extension",
+    "storage_bucket": "seedr-extension.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612312458057:android:32f2aec91c9cb68de33098",
+        "android_client_info": {
+          "package_name": "com.android.seedrextension"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612312458057-6i66g9c0as4ubrq8v1tstiimscsr2mvk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXb80MmF12WpOV77TzW9RQt9QjJazmxtA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612312458057-6i66g9c0as4ubrq8v1tstiimscsr2mvk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
