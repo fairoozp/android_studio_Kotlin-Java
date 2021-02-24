@@ -1,14 +1,13 @@
-package com.android.mywallet.ui.home
+package com.android.seedrextension.ui.slideshow
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class SlideshowViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "Balance"
+        value = "This is slideshow Fragment"
     }
     val text: LiveData<String> = _text
-
 }
