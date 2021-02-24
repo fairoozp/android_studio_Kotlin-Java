@@ -28,6 +28,8 @@ class GalleryFragment : Fragment() {
             textView.text = it
         })*/
 
+
+
         val web_home : WebView = root.findViewById(R.id.web_home)
         web_home.loadUrl("https://www.seedr.cc/files")
         web_home.getSettings().setJavaScriptEnabled(true);
@@ -42,6 +44,11 @@ class GalleryFragment : Fragment() {
         val newUA = "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.4) Gecko/20100101 Firefox/4.0"
         web_home.getSettings().setUserAgentString(newUA)
 
+        if (web_home.canGoBack()) web_home.goBack()
+
         return root
     }
+
+
+
 }

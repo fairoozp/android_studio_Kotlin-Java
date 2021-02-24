@@ -42,6 +42,8 @@ class SlideshowFragment : Fragment() {
         val newUA = "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.4) Gecko/20100101 Firefox/4.0"
         web_torrent.getSettings().setUserAgentString(newUA)
 
+        if (web_torrent.canGoBack()) web_torrent.goBack()
+
         return root
     }
 }
