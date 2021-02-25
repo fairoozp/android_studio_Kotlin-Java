@@ -1,6 +1,7 @@
 package com.android.seedrextension.ui.slideshow
 
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,7 +32,11 @@ class SlideshowFragment : Fragment() {
 
         web_torrent.setWebViewClient(object: WebViewClient() {
             override fun shouldOverrideUrlLoading(view:WebView, url:String):Boolean {
-                return false
+                var keyCode = null
+                if (keyCode == KeyEvent.KEYCODE_BACK && web_torrent.canGoBack()) {
+                    web_torrent.goBack()
+                }
+                    return false
             }
         })
 
@@ -39,6 +44,9 @@ class SlideshowFragment : Fragment() {
 
         web_torrent.setScrollbarFadingEnabled(false);
         val newUA = "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.4) Gecko/20100101 Firefox/4.0"
+
+        web_torrent.evaluateJavascript("document.querySelector('meta[name=\"viewport\"]').setAttribute('content', 'width=1024px, initial-scale=' + (document.documentElement.clientWidth / 1024));", null);
+
         web_torrent.getSettings().setUserAgentString(newUA)
 
         web_torrent.getSettings().setJavaScriptEnabled(true);
@@ -53,4 +61,5 @@ class SlideshowFragment : Fragment() {
 
         return root
     }
+
 }
