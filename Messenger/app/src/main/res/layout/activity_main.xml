@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="center"
-        android:hint="Phone Number"
+        android:hint="@string/phone_number"
         android:inputType="phone"
         android:maxLength="10"
         android:textColor="@color/black"
@@ -22,7 +22,8 @@
         app:layout_constraintHorizontal_bias="0.644"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.207" />
+        app:layout_constraintVertical_bias="0.207"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/message"
@@ -30,7 +31,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="center|top"
-        android:hint="Content"
+        android:hint="@string/content"
         android:inputType="textMultiLine"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -39,7 +40,8 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.499"
+        android:autofillHints="" />
 
     <ImageButton
         android:id="@+id/clear"
@@ -52,7 +54,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.911"
-        app:srcCompat="@drawable/clear" />
+        app:srcCompat="@drawable/clear"
+        android:contentDescription="@string/todo" />
 
     <ImageButton
         android:id="@+id/send"
@@ -65,13 +68,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.909"
-        app:srcCompat="@drawable/send" />
+        app:srcCompat="@drawable/send"
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Send"
+        android:text="@string/send"
         app:layout_constraintBottom_toTopOf="@+id/send"
         app:layout_constraintEnd_toEndOf="@+id/send"
         app:layout_constraintStart_toStartOf="@+id/send"
@@ -82,7 +86,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Clear"
+        android:text="@string/clear"
         app:layout_constraintBottom_toTopOf="@+id/clear"
         app:layout_constraintEnd_toEndOf="@+id/clear"
         app:layout_constraintStart_toStartOf="@+id/clear"
@@ -94,7 +98,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="+91"
+        android:text="@string/_91"
         android:textColor="@color/black"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -103,5 +107,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.216" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="@string/call"
+        app:layout_constraintBottom_toTopOf="@+id/call"
+        app:layout_constraintEnd_toEndOf="@+id/call"
+        app:layout_constraintStart_toStartOf="@+id/call"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98" />
+
+    <ImageButton
+        android:id="@+id/call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.909"
+        app:srcCompat="@drawable/call"
+        android:contentDescription="@string/todo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

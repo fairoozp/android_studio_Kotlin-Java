@@ -1,26 +1,27 @@
 package com.android.messenger
 
-import android.Manifest
-import android.content.pm.PackageManager
+
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.telephony.SmsManager
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
+
 
 class MainActivity : AppCompatActivity() {
 
 
-    lateinit var phone : EditText
-    lateinit var message : EditText
-    lateinit var send : ImageButton
-    lateinit var clear :ImageButton
+    private lateinit var phone : EditText
+    private lateinit var message : EditText
+    private lateinit var send : ImageButton
+    private lateinit var clear : ImageButton
+    private lateinit var call : ImageButton
 
-    lateinit var number : String
-    lateinit var content : String
+    private lateinit var number : String
+    private lateinit var content : String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         message = findViewById(R.id.message)
         send = findViewById(R.id.send)
         clear = findViewById(R.id.clear)
+        call = findViewById(R.id.call)
 
 
         send.setOnClickListener {
@@ -41,7 +43,6 @@ class MainActivity : AppCompatActivity() {
             smsManager.sendTextMessage(number, null, content, null, null)
             Toast.makeText(this, "Message Send Successfully", Toast.LENGTH_SHORT).show()
             message.setText("")
-            sendsms()
         }
 
         clear.setOnClickListener {
@@ -49,43 +50,14 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Message Cleared", Toast.LENGTH_SHORT).show()
         }
 
-
-    }
-
-    private fun sendsms() {
-        number=phone.text.toString()
-        content=phone.text.toString()
-        if ((ContextCompat.checkSelfPermission(this,
-                        Manifest.permission.SEND_SMS) !== PackageManager.PERMISSION_GRANTED))
-        {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                            Manifest.permission.SEND_SMS))
-            {}
-            else
-            {
-                ActivityCompat.requestPermissions(this,
-                        arrayOf<String>(Manifest.permission.SEND_SMS),
-                        MY_PERMISSIONS_REQUEST_SEND_SMS)
-            }
+        call.setOnClickListener {
+            number=phone.text.toString()
+            val dialIntent = Intent(Intent.ACTION_DIAL)
+            dialIntent.data = Uri.parse("tel:$number")
+            startActivity(dialIntent)
+            Toast.makeText(this, "Calling", Toast.LENGTH_SHORT).show()
         }
-    }
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
-        when (requestCode) {
-            MY_PERMISSIONS_REQUEST_SEND_SMS -> {
-                if ((grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-                    val smsManager = SmsManager.getDefault()
-                    smsManager.sendTextMessage(number, null, content, null, null)
-                    Toast.makeText(getApplicationContext(), "SMS sent.",
-                            Toast.LENGTH_LONG).show()
-                } else {
-                    Toast.makeText(getApplicationContext(),
-                            "SMS faild, please try again.", Toast.LENGTH_LONG).show()
-                    return
-                }
-            }
-        }
-    }
-    companion object {
-        private val MY_PERMISSIONS_REQUEST_SEND_SMS = 1
+
+
     }
 }
