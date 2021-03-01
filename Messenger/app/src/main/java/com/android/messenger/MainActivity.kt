@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
         call.setOnClickListener {
             number=phone.text.toString()
-            val dialIntent = Intent(Intent.ACTION_DIAL)
+            val dialIntent = Intent(Intent.ACTION_CALL)
             dialIntent.data = Uri.parse("tel:$number")
             startActivity(dialIntent)
             Toast.makeText(this, "Calling", Toast.LENGTH_SHORT).show()
