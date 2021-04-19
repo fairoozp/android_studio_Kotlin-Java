@@ -8,8 +8,8 @@ object DatabaseContainer {
         companion object{
             const val TABLE_NAME = "Diary"
             const val ID = "id"
-            const val DATA = "data"
-
+            const val IMP = "imp"
+            const val DAY = "day"
         }
     }
 }

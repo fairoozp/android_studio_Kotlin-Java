@@ -9,6 +9,11 @@ import androidx.appcompat.app.AppCompatActivity
 class Diarymain : AppCompatActivity() {
 
     private val db : DatabaseHelper = DatabaseHelper(this)
+    private var imp : String = ""
+    private var id : String = ""
+    private var day : String = ""
+    var dstr = "diary editable"
+    var impstr = "just trying edit text"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,12 +24,13 @@ class Diarymain : AppCompatActivity() {
         ddate.text = d
         val id = d.toString()
 
+        readdata()
+
         val impbt : ImageButton = findViewById(R.id.impbt)
         val imptv : TextView = findViewById(R.id.imptv)
         val impetv : EditText = findViewById(R.id.impetv)
         impetv.visibility=View.INVISIBLE
         var x = 0
-        var impstr = "just trying edit text"
         impetv.setText(impstr, TextView.BufferType.EDITABLE)
         imptv.text = impstr
         impbt.setOnClickListener {
@@ -42,7 +48,8 @@ class Diarymain : AppCompatActivity() {
                 impstr = imptv.text.toString()
 
                 val imp = impstr
-                val result : Boolean = db.insert(id,imp)
+                val day = dstr
+                val result : Boolean = db.insert(id,imp,day)
                 when{
                     result -> Toast.makeText(applicationContext, "Data Inserted", Toast.LENGTH_SHORT).show()
                     else -> Toast.makeText(applicationContext, "Failed", Toast.LENGTH_SHORT).show()
@@ -54,7 +61,6 @@ class Diarymain : AppCompatActivity() {
         val dtv : TextView = findViewById(R.id.dtv)
         val detv : EditText = findViewById(R.id.detv)
         detv.visibility=View.INVISIBLE
-        var dstr = "diary editable"
         dtv.text = dstr
         detv.setText(dstr, TextView.BufferType.EDITABLE)
         var y = 0
@@ -83,9 +89,11 @@ class Diarymain : AppCompatActivity() {
 
     fun readdata(){
         val data = db.read()
-        val stringBuffer = StringBuffer()
         if (data != null && data.count>0){
-            
+            //imp = data.getString(1)
+        }
+        else{
+            db.insert(id,imp,day)
         }
     }
 
