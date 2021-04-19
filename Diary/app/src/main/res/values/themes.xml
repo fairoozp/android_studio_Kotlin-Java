@@ -16,10 +16,10 @@
         <!-- Customize your theme here. -->
     </style>
     <style name="button">
-        <item name="cornerSizeTopLeft">25%</item>
-        <item name="cornerSizeBottomRight">25%</item>
+        <item name="cornerSizeTopLeft">45%</item>
+        <item name="cornerSizeBottomRight">45%</item>
         <!--<item name="cornerFamilyBottomRight">cut</item>-->
-        <item name="cornerSizeBottomLeft">25%</item>
-        <item name="cornerSizeTopRight">25%</item>
+        <item name="cornerSizeBottomLeft">45%</item>
+        <item name="cornerSizeTopRight">45%</item>
     </style>
 </resources>

@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.example.diary
 
 import android.content.Intent
@@ -34,7 +36,6 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this,Diarymain::class.java)
                 intent.putExtra("d",d)
                 startActivity(intent)
-                Toast.makeText(this, "Move to Diary Fragment $d", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -49,6 +50,6 @@ class MainActivity : AppCompatActivity() {
         this.doubleBackToExitPressedOnce = true
         Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show()
 
-        Handler().postDelayed(Runnable { doubleBackToExitPressedOnce = false }, 2000)
+        Handler().postDelayed( { doubleBackToExitPressedOnce = false }, 2000)
     }
 }

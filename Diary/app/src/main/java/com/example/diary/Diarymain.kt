@@ -11,8 +11,10 @@ class Diarymain : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.diary_main)
 
+        val db : DatabaseHelper = DatabaseHelper(this)
+
         val ddate : TextView = findViewById(R.id.ddate)
-        val d = intent.getStringExtra("d");
+        val d = intent.getStringExtra("d")
         ddate.text = d
 
         val impbt : ImageButton = findViewById(R.id.impbt)
@@ -29,7 +31,6 @@ class Diarymain : AppCompatActivity() {
                 impetv.visibility = View.VISIBLE
                 impbt.setImageResource(R.drawable.save)
                 x = 1
-                Toast.makeText(this, "Edit Mode", Toast.LENGTH_SHORT).show()
             }
             else {
                 imptv.visibility= View.VISIBLE
@@ -37,8 +38,14 @@ class Diarymain : AppCompatActivity() {
                 impbt.setImageResource(R.drawable.edit)
                 imptv.text = impetv.text
                 impstr = imptv.text.toString()
+                val id = d.toString()
+                val data = impstr
+                val result : Boolean = db.insert(id,data)
+                when{
+                    result -> Toast.makeText(applicationContext, "Data Inserted", Toast.LENGTH_SHORT).show()
+                    else -> Toast.makeText(applicationContext, "Failed", Toast.LENGTH_SHORT).show()
+                }
                 x = 0
-                Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show()
             }
         }
         val dbt : ImageButton = findViewById(R.id.dbt)
@@ -55,7 +62,6 @@ class Diarymain : AppCompatActivity() {
                 detv.visibility = View.VISIBLE
                 dbt.setImageResource(R.drawable.save)
                 y = 1
-                Toast.makeText(this, "Edit Mode", Toast.LENGTH_SHORT).show()
             }
             else{
                 dtv.visibility = View.VISIBLE
@@ -64,14 +70,12 @@ class Diarymain : AppCompatActivity() {
                 dtv.text = detv.text
                 dstr = dtv.text.toString()
                 y = 0
-                Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show()
             }
         }
         val home : Button = findViewById(R.id.home)
         home.setOnClickListener {
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
-            Toast.makeText(this , "Going Home", Toast.LENGTH_SHORT).show()
         }
     }
 
