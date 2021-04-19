@@ -7,15 +7,17 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
 class Diarymain : AppCompatActivity() {
+
+    private val db : DatabaseHelper = DatabaseHelper(this)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.diary_main)
 
-        val db : DatabaseHelper = DatabaseHelper(this)
-
         val ddate : TextView = findViewById(R.id.ddate)
         val d = intent.getStringExtra("d")
         ddate.text = d
+        val id = d.toString()
 
         val impbt : ImageButton = findViewById(R.id.impbt)
         val imptv : TextView = findViewById(R.id.imptv)
@@ -38,9 +40,9 @@ class Diarymain : AppCompatActivity() {
                 impbt.setImageResource(R.drawable.edit)
                 imptv.text = impetv.text
                 impstr = imptv.text.toString()
-                val id = d.toString()
-                val data = impstr
-                val result : Boolean = db.insert(id,data)
+
+                val imp = impstr
+                val result : Boolean = db.insert(id,imp)
                 when{
                     result -> Toast.makeText(applicationContext, "Data Inserted", Toast.LENGTH_SHORT).show()
                     else -> Toast.makeText(applicationContext, "Failed", Toast.LENGTH_SHORT).show()
@@ -76,6 +78,14 @@ class Diarymain : AppCompatActivity() {
         home.setOnClickListener {
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
+        }
+    }
+
+    fun readdata(){
+        val data = db.read()
+        val stringBuffer = StringBuffer()
+        if (data != null && data.count>0){
+            
         }
     }
 
